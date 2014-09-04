@@ -7,8 +7,11 @@ Requirements
 ------------
 
 (Boot2docker)[http://boot2docker.io/]
+
 (VirtualBox)[https://www.virtualbox.org/]
+
 (Vagrant)[https://www.vagrantup.com/]
+
 (CoreOS)[https://coreos.com/]
 
 
@@ -16,7 +19,9 @@ Install
 -------
 
 (Boot2docker for OSX Installer Downloads)[https://github.com/boot2docker/osx-installer/releases]
+
 (VirtualBox Downloads)[https://www.virtualbox.org/wiki/Downloads]
+
 (CoreOS Install with Vagrant)[https://coreos.com/docs/running-coreos/platforms/vagrant/]
 
 ```
