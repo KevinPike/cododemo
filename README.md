@@ -419,6 +419,19 @@ http://<ipaddr>:8080/bar
 ##### QUESTION
 What happened here?
 
+Alternately (the ```-d``` flag indicates that this is detached)
+```
+docker run -d -v /media/state/shared/:/var/shared/ -p 8080:8080 rbucker/devbox /bin/sh -c "cd ~/src/github.com/rbucker/cododemo && go run web.go"
+```
+
+Now you can get the docker process stack
+```
+docker ps
+```
+
+and you can stop the container if you want.
+
+
 HA Hello World webserver
 --------------
 
