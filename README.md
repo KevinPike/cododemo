@@ -124,12 +124,16 @@ vagrant ssh core-03
 What is a Dockerfile
 --------------------
 
-tbd
+A ```Dockerfile``` is a docker container configuration file that can be considered similar to a ```Makefile```. The Dockerfile is used by the docker CLI tool in order to construct the container instance. The format of the Dockerfile is defined by its' DSL.
+
+[docs](https://docs.docker.com/reference/builder/)
 
 What is a registry / private registry
 -------------------------------------
 
-tbd
+The Dockerfile is held locally but can be stored in a public or private registry. There are also public and private service providers who will autobuild your container from your docker file so that it's always ready.
+
+(see the docker ```commit``` command)
 
 ** find a way to block writes to the public registry so that we are not leaking intellectual property
 
@@ -176,6 +180,11 @@ HA Hello World
 --------------
 
 [docs](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/)
+
+Hello World cloud-config
+------------------------
+
+tbd
 
 Shipyard
 --------
