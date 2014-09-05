@@ -8,6 +8,24 @@ Warning
 
 There is a lot of vaporware and junkware out there that is representing itself as orchestration or composition tools for CoreOS and/or Docker, however, while there is some effort involved in getting an environment into production it's almost better to execute and understand in the underlying scaffolding than to immediately defer to some opinionated framework.
 
+Opinionated Preface
+-------------------
+
+When considering both CoreOS and Docker; they are viewed as codependent opinionated environments. Here are some nuggest:
+- CoreOS should be installed on bare metal
+- CoreOS should be the only OS on the machine if a hypervisor is present for ease of mgmt
+- CoreOS is mostly immutable; there are places to store user apps but there is no package manager ...
+- CoreOS wants user apps to run on docker and user their systemd, fleetd, etcd ecosystem (more tools coming)
+- Docker containers are meant to look like a standalone machine but use the hosts OS kernel
+- Docker containers are immutable
+- Docker container persistance is accomplished by using volumes or data-links
+- Docker wants one process per container
+- Docker containers require links in order to communicate between peers
+- Docker links have behaviors (see link ambassadors)
+- Docker wants you to build, test and deploy the same container instance
+
+** neither CoreOS nor Docker are going to create a transparent environment or experience. Getting to that level would potentially compromise security or create operational issues that the environments intend to prevent (FUD)
+
 Requirements
 ------------
 
