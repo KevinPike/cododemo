@@ -299,6 +299,35 @@ docker build --rm -t=rbucker/devbox .
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 ```
 
+Hello World Part 2
+------------------
+
+```
+mkdir -p ${HOME}/src/github.com/rbucker
+cd ${HOME}/src/github.com/rbucker
+git clone https://github.com/rbucker/cododemo
+cd cododemo
+```
+
+run the hello.go program through the go compiler/runner
+
+```
+go run hello.go 
+```
+
+TASKS:
+- exit the container
+- run the container
+- go back to the hello source ```cd ${HOME}/src/github.com/rbucker/cododemo```
+- run hello again
+- build hello instead of run ```go build hello.go```
+- get a long list from this folder and notice the flags on the executable ```hello```
+- run hello from the executable ```./hello```
+- what did you get?
+- why?
+- copy the executable to your home and execute ```cp ./hello ~/. && ~/hello```
+- what did you get?
+- why?
 
 Hello World webserver
 ---------------------
