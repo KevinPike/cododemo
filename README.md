@@ -181,23 +181,36 @@ Docker Commands
 Docker Cleanup
 --------------
 
-containers (running or exit)
-images
-flatten
+I ran my hello world command multiple times. Something like. Since the command was just printing out hello and some other text before exiting; container is in a terminal state. Not running. Running the ```docker ps``` command will return an empty list. However, after running the command ```docker run hello-world``` multiple times the docker container did leave some breadcrumbs.
 
-** watch out for persistent or data-containers.
+```
+$ docker ps -a
+CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS                         PORTS               NAMES
+20f0c6dd1dc9        hello-world:latest   "/hello"            15 seconds ago      Exited (0) 14 seconds ago                          berserk_wright      
+c0a8f556973d        hello-world:latest   "/hello"            21 minutes ago      Exited (0) 21 minutes ago                          angry_babbage       
+6df23e68e893        hello-world:latest   "/hello"            About an hour ago   Exited (0) About an hour ago                       naughty_bohr        
+2306f2880ff4        hello-world:latest   "/hello"            About an hour ago   Exited (0) About an hour ago                       boring_nobel        
+5086487ecf20        hello-world:latest   "/hello"            2 hours ago         Exited (0) 2 hours ago                             naughty_poincare    
+4e73bb80cc8d        hello-world:latest   "/hello"            2 hours ago         Exited (0) 2 hours ago                             jolly_bell    
+```
+
+Remove all stopped containers: ```docker rm $(docker ps -a -q)```
+
+Removed all untagged images: ```docker rmi $(docker images | grep "^<none>" | awk "{print $3}")```
+
+** watch out for persistent or data-containers. As I've already said if the reference count reaches zero the data will be lost.
 
 Where is it?
 ------------
 
-** Docker artifacts are stored here
+Docker artifacts are stored here ```/var/lib/docker```
 
-** watch your disk usage
+watch your disk usage... it's easy to fill up the host drive.
 
 Docker Limits
 -------------
 
-there was once a 42 image limit for a container
+there was once a 42 image limit for a container. At some point you have to flatten the layers.
 
 Hello World
 -----------
@@ -215,6 +228,21 @@ devbox
 [shykes/devbox](https://registry.hub.docker.com/u/shykes/devbox/) - is a container the allows the user to create a proper development environment. (build the container, run the container with a command, execute your shell commands etc...) He has a [link](https://github.com/shykes/devbox) to the github source.
 
 rbucker/devbox - I have created a Dockerfile with a little more tooling and some documentation on bitbucket [here](https://bitbucket.org/rbucker/devbox). The different commands and dependencies are included.
+
+create a storage volume
+
+```
+mkdir -p /media/state/shared/
+```
+
+```
+mkdir -p ${HOME}/src/bitbucket.org/rbucker
+cd ${HOME}/src/bitbucket.org/rbucker
+git clone https://bitbucket.org/rbucker/devbox.git
+cd devbox
+docker build --rm -t=rbucker/devbox .
+docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
+```
 
 
 Hello World webserver
