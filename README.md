@@ -68,6 +68,11 @@ Fun fact about CoreOS
 
 Looking at the [release](https://coreos.com/releases/) page at CoreOS you'll that the latest alpha version is 423.0.0.  When the alpha version is promoted to beta or stable it is that exact image that is promoted. There is no additional build that takes place.
 
+Fun fact about Docker
+---------------------
+
+Docker wants you to do the same thing.  Build the container, test the container, move the container to the next stage in the pipeline until it get's to production.
+
 Deploy a 3 CoreOS cluster
 -------------------------
 
