@@ -398,11 +398,6 @@ TASKS:
 Hello World webserver
 ---------------------
 
-get the IP address
-```
-ifconfig
-```
-
 start the container up
 ```
 docker run -it -v /media/state/shared/:/var/shared/ -p 8080:8080 rbucker/devbox /bin/bash
