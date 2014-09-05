@@ -16,6 +16,7 @@ When considering both CoreOS and Docker; they are viewed as codependent opiniona
 - CoreOS should be the only OS on the machine if a hypervisor is present for ease of mgmt
 - CoreOS is mostly immutable; there are places to store user apps but there is no package manager ...
 - CoreOS wants user apps to run on docker and user their systemd, fleetd, etcd ecosystem (more tools coming)
+- CoreOS does not ship with perl, python or ruby. THANK GOODNESS!
 - Docker containers are meant to look like a standalone machine but use the hosts OS kernel
 - Docker containers are immutable
 - Docker container persistance is accomplished by using volumes or data-links
