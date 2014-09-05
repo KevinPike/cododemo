@@ -160,7 +160,6 @@ What is Docker?
 - since containers are immutable persistence is implemented through ```volumes``` or ```links``` to storage-containers
 - storage-containers that are not persisted via a ```volume``` will be lost when the reference count is zero
 - there are 3rd party tools for backing up containers and moving them around the cluster; and then there is the registry
-- 
 
 Docker tools
 ------------
