@@ -118,7 +118,7 @@ cp config.rb.sample config.rb
 cp user-data.sample user-data
 ```
 
-edit the config.rb file and make these changes. The lines might need to be uncommented:
+edit the [config.rb](https://github.com/coreos/coreos-vagrant/blob/master/config.rb.sample) file and make these changes. The lines might need to be uncommented:
 
 ```
 # Size of the CoreOS cluster created by Vagrant
@@ -141,7 +141,7 @@ $vb_cpus = 1
 
 ```
 
-The user-data is a little tricky. The file is modelled a after the cloud-config file.
+The [user-data](https://github.com/coreos/coreos-vagrant/blob/master/user-data.sample) is a little tricky. The file is modelled a after the cloud-config file.
 
 The first thing you need is key for ETCD so that the cluster can identify itself as part of the cluster. Each core instance of etcd uses this to identify the cluster. (if you ```vagrant destroy``` the cluster you need a ```new``` key)
 
