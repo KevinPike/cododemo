@@ -169,6 +169,8 @@ The Dockerfile is held locally but can be stored in a public or private registry
 
 ** find a way to block writes to the public registry so that we are not leaking intellectual property
 
+The registry.hub.docker.com is full of projects. There are many more community contributions than there are curated. ```Stackbrew``` is the username assigned to the docker team so their images can be trusted (don't take my word for it). There are some other users that are considered "trusted" but I'm not certain about the certification process. I prefer private repositories but that takes planning and storage.
+
 
 Docker Commands
 ---------------
