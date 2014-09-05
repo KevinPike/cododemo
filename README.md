@@ -3,6 +3,11 @@ CoreOS / Docker - demo (cododemo)
 
 This repo is meant for a small CoreOS + Docker workshop that I'm presenting by collecting bits from all over. I will provide references when possible. I appreciate those who came first.
 
+Warning
+-----------
+
+There is a lot of vaporware and junkware out there that is representing itself as orchestration or composition tools for CoreOS and/or Docker, however, while there is some effort involved in getting an environment into production it's almost better to execute and understand in the underlying scaffolding than to immediately defer to some opinionated framework.
+
 Requirements
 ------------
 
@@ -66,7 +71,7 @@ Looking at the [release](https://coreos.com/releases/) page at CoreOS you'll tha
 Deploy a 3 CoreOS cluster
 -------------------------
 
-Thw CoreOS/Vagrant installer includes sample files that need to properly configures.
+The CoreOS/Vagrant installer includes sample files that need to properly configures.
 
 ```
 cd ${HOME}/src/github.com/coreos/coreos-vagrant
