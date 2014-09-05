@@ -126,8 +126,6 @@ devbox
 
 tbd
 
-Commands
-
 
 Redis Client and Server on the same instance
 --------------------------------------------
@@ -152,7 +150,7 @@ Redis Server Failure and restart (ambassador)
 tbd
 
 Redis Server Failure and fleet
----------------------------------------------
+------------------------------
 
 tbd
 
