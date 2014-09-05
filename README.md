@@ -23,6 +23,7 @@ When considering both CoreOS and Docker; they are viewed as codependent opiniona
 - Docker containers require links in order to communicate between peers
 - Docker links have behaviors (see link ambassadors)
 - Docker wants you to build, test and deploy the same container instance
+- each Docker instance refers to itself as localhost and 127.0.0.1 (new)
 
 ** neither CoreOS nor Docker are going to create a transparent environment or experience. Getting to that level would potentially compromise security or create operational issues that the environments intend to prevent (FUD)
 
@@ -166,6 +167,48 @@ ssh into an instance.
 vagrant ssh core-01
 vagrant ssh core-02
 vagrant ssh core-03
+```
+
+Play with etcd
+--------------
+
+do this or pick your own combination of tasks
+
+Start here - clean my key, create a key, and verify on core-01
+```
+vagrant ssh core-01
+curl -L http://127.0.0.1:4001/version
+curl -L http://127.0.0.1:4001/v2/machines
+curl -L http://127.0.0.1:4001/v2/leader
+curl -L http://127.0.0.1:4001/v2/keys/mykey -XDELETE
+curl -L http://127.0.0.1:4001/v2/keys/mykey -XPUT -d value="this is awesome"
+curl -L http://127.0.0.1:4001/v2/keys/mykey
+
+# advanced - connecting to the host from inside the container (somewhat unreliable)
+docker run --privileged=true -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
+export DOCKERHOST=`netstat -nr | grep '^0\.0\.0\.0' | awk '{print $2}'`
+curl -L http://${DOCKERHOST}:4001/v2/machines
+curl -L http://${DOCKERHOST}:4001/v2/keys/mykey -XPUT -d value="this is awesome"
+curl -L http://${DOCKERHOST}:4001/v2/keys/mykey
+```
+Check that the key was replicated to core-02
+```
+vagrant ssh core-02
+curl -L http://127.0.0.1:4001/v2/machines
+curl -L http://127.0.0.1:4001/v2/keys/mykey
+curl -L http://127.0.0.1:4001/v2/keys/mykey -XDELETE
+```
+
+verify it's been deleted from core-01
+```
+vagrant ssh core-01
+curl -L http://127.0.0.1:4001/v2/keys/mykey
+```
+
+verify it's still deleted from core-02
+```
+vagrant ssh core-02
+curl -L http://127.0.0.1:4001/v2/keys/mykey
 ```
 
 What is Docker?
