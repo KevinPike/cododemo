@@ -58,6 +58,11 @@ docker run hello-world
 
 ** one of the things that makes CoreOS nice is that it is immutable where it counts. This theme is extended into docker too. Once you create a container with a Dockerfile you should never change it. If you want to make a change then rebuild the container. As for saving data or persisting information; that is performed using volume mounts points or data-containers.
 
+Fun fact about CoreOS
+---------------------
+
+Looking at the [release](https://coreos.com/releases/) page at CoreOS you'll that the latest alpha version is 423.0.0.  When the alpha version is promoted to beta or stable it is that exact image that is promoted. There is no additional build that takes place.
+
 Deploy a 3 CoreOS cluster
 -------------------------
 
@@ -121,10 +126,27 @@ vagrant ssh core-02
 vagrant ssh core-03
 ```
 
+What is Docker?
+--------------
+
+- docker is the wrapper for the toolchain that orchestrates everything between the docker container(s) and the host OS.
+- docker containers/images are described as specialized tarfiles that are immutable and represent the userspace needed for the app that runs in the container
+- the container should only run one process per container instance
+- communication between containers is done with ```links```
+- since containers are immutable persistence is implemented through ```volumes``` or ```links``` to storage-containers
+- storage-containers that are not persisted via a ```volume``` will be lost when the reference count is zero
+- there are 3rd party tools for backing up containers and moving them around the cluster; and then there is the registry
+
 What is a Dockerfile
 --------------------
 
-A ```Dockerfile``` is a docker container configuration file that can be considered similar to a ```Makefile```. The Dockerfile is used by the docker CLI tool in order to construct the container instance. The format of the Dockerfile is defined by its' DSL.
+A ```Dockerfile``` is a docker container configuration file that can be considered similar to a ```Makefile```. The Dockerfile is used by the docker CLI tool in order to construct the container instance called an ```image```. The format of the Dockerfile is defined by its' DSL. As each step is performed an image is captured on the host OS and a signature assigned. (a random name is also assigned; and when the final step is completed the user defined name is assigned to the last image as an alias). All of the intermediate images remain unless the ```rm``` flag is applied to the ```build``` command.
+
+** each image created by a Dockerfile is called a layer. Historically there isa limit to 42 layers in a single Dockerfile. The good news is that are ways to combines tasks. (think about ```apt-get``` multiple packages at once)
+
+The docker images are stored here: ```/var/lib/docker/graph/<id>/layer```
+
+There is plenty of discussion suggesting that Dockerfiles devalue chef, puppet, ansible, saltstack.
 
 [docs](https://docs.docker.com/reference/builder/)
 
@@ -141,9 +163,15 @@ The Dockerfile is held locally but can be stored in a public or private registry
 Docker Commands
 ---------------
 
-build
-run
-commit
+```build``` - Build a new image from the source code (Dockerfile). Each task in the Dockerfile creates a separate image file. Using the ```-rm``` flag deletes the intermediate images saving space but subsequent builds will take longer.
+
+```run``` - Run a command in a new container. If you want the command to run in the background then you need to set the interactive flag.
+
+```commit``` - Create a new image from a container's changes (save it in the repo)
+
+```stop``` - Stop a running container by sending SIGTERM and then SIGKILL after a grace period. (assuming that you initiated a command by calling the ```run``` command with the interactive flag.
+
+```start``` - Restart a ```stop```ped container. You cannot start a command that has exited. (docker provides a restart flag) Auto-restart must be considered carefully when working with CoreOS.
 
 Docker Cleanup
 --------------
@@ -166,10 +194,23 @@ Docker Limits
 
 there was once a 42 image limit for a container
 
+Hello World
+-----------
+
+```
+vagrant ssh core-01
+docker run hello-world
+```
+
+notice that the output from this hello-world is the exact same as the boot2docker version. That's because they are the same container image constructed (built) from the same Dockerfile. [Here](https://registry.hub.docker.com/u/library/hello-world/) is the registry where the hello-world image lives.
+
 devbox
 ------
 
-tbd
+[shykes/devbox](https://registry.hub.docker.com/u/shykes/devbox/) - is a container the allows the user to create a proper development environment. (build the container, run the container with a command, execute your shell commands etc...) He has a [link](https://github.com/shykes/devbox) to the github source.
+
+rbucker/devbox - I have created a Dockerfile with a little more tooling and some documentation on bitbucket [here](https://bitbucket.org/rbucker/devbox). The different commands and dependencies are included.
+
 
 Hello World webserver
 ---------------------
@@ -236,6 +277,11 @@ So far everything I have written comes from one of the 4 sources I've already id
 [Vagrant](https://www.vagrantup.com/)
 
 [CoreOS](https://coreos.com/)
+
+Thanks
+------
+
+Special thanks to the CoreOS team Alex, Alex, and Brian (from CoreOS) who peeked over my shoulder while I wrote this. :)
 
 License
 -------
