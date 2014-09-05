@@ -90,6 +90,71 @@ vagrant ssh core-02
 vagrant ssh core-03
 ```
 
+Docker Commands
+---------------
+
+build
+run
+commit
+
+Docker Cleanup
+--------------
+
+containers (running or exit)
+images
+
+Where is it?
+------------
+
+** Docker artifacts are stored here
+
+** watch your disk usage
+
+Docker Limits
+-------------
+
+there was once a 42 image limit for a container
+
+
+Hello World
+-----------
+
+tbd
+
+devbox
+------
+
+tbd
+
+Commands
+
+
+Redis Client and Server on the same instance
+--------------------------------------------
+
+tbd
+
+Redis Client and Server on different instances
+----------------------------------------------
+
+tbd
+
+Redis Server Failure and restart
+--------------------------------
+
+tbd
+
+** docker auto restart can be dangerous, especially when combined with CoreOS.
+
+Redis Server Failure and restart (ambassador)
+---------------------------------------------
+
+tbd
+
+Redis Server Failure and fleet
+---------------------------------------------
+
+tbd
 
 
 References
