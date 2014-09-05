@@ -183,14 +183,8 @@ curl -L http://127.0.0.1:4001/v2/leader
 curl -L http://127.0.0.1:4001/v2/keys/mykey -XDELETE
 curl -L http://127.0.0.1:4001/v2/keys/mykey -XPUT -d value="this is awesome"
 curl -L http://127.0.0.1:4001/v2/keys/mykey
-
-# advanced - connecting to the host from inside the container (somewhat unreliable)
-docker run --privileged=true -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
-export DOCKERHOST=`netstat -nr | grep '^0\.0\.0\.0' | awk '{print $2}'`
-curl -L http://${DOCKERHOST}:4001/v2/machines
-curl -L http://${DOCKERHOST}:4001/v2/keys/mykey -XPUT -d value="this is awesome"
-curl -L http://${DOCKERHOST}:4001/v2/keys/mykey
 ```
+
 Check that the key was replicated to core-02
 ```
 vagrant ssh core-02
@@ -358,6 +352,16 @@ git clone https://bitbucket.org/rbucker/devbox.git
 cd devbox
 docker build --rm -t=rbucker/devbox .
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
+```
+
+##### Play with etcd again
+```
+# advanced - connecting to the host from inside the container (somewhat unreliable)
+docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
+export DOCKERHOST=`netstat -nr | grep '^0\.0\.0\.0' | awk '{print $2}'`
+curl -L http://${DOCKERHOST}:4001/v2/machines
+curl -L http://${DOCKERHOST}:4001/v2/keys/mykey -XPUT -d value="this is awesome"
+curl -L http://${DOCKERHOST}:4001/v2/keys/mykey
 ```
 
 Hello World Part 2
