@@ -1,7 +1,7 @@
-CoreOS / Docker - demo
+CoreOS / Docker - demo (cododemo)
 ======================
 
-This repo is meant for a small CoreOS + Docker workshop that I'm presenting by collecting bits from all over.
+This repo is meant for a small CoreOS + Docker workshop that I'm presenting by collecting bits from all over. I will provide references when possible. I appreciate those who came first.
 
 Requirements
 ------------
@@ -13,6 +13,11 @@ Requirements
 [Vagrant](https://www.vagrantup.com/)
 
 [CoreOS](https://coreos.com/)
+
+NOTE
+----
+
+[Project Atomic](http://www.projectatomic.io/) is from Red Hat and is also awesome. It's based on Fedora with some SELinux sprinkled in. It also has some infrastructure dashboard type stuff and it also borrows from Docker and other projects.
 
 
 Install
@@ -157,17 +162,25 @@ Docker Limits
 
 there was once a 42 image limit for a container
 
-
-Hello World
------------
-
-tbd
-
 devbox
 ------
 
 tbd
 
+Hello World webserver
+---------------------
+
+tbd
+
+HA Hello World
+--------------
+
+[docs](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/)
+
+Shipyard
+--------
+
+tbd
 
 Redis Client and Server on the same instance
 --------------------------------------------
@@ -196,6 +209,25 @@ Redis Server Failure and fleet
 
 tbd
 
+Drone
+-----
+
+tbd
+
 
 References
 ----------
+
+So far everything I have written comes from one of the 4 sources I've already identified as requirements.
+
+[Boot2docker](http://boot2docker.io/)
+
+[VirtualBox](https://www.virtualbox.org/)
+
+[Vagrant](https://www.vagrantup.com/)
+
+[CoreOS](https://coreos.com/)
+
+License
+-------
+No license is offered.
