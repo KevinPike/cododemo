@@ -39,7 +39,7 @@ Install
 Let's Boot2docker
 -----------------
 
-Just to get our docker feet wet.
+Just to get our docker feet wet. It has no persistance unless your work uploads or saves it's content directly. Once the container is gone; it is gone.
 
 ```
 boot2docker init
@@ -72,6 +72,20 @@ Fun fact about Docker
 ---------------------
 
 Docker wants you to do the same thing.  Build the container, test the container, move the container to the next stage in the pipeline until it get's to production.
+
+CoreOS tools
+------------
+
+- CoreOS Cluster is defined by 3 or more instances.
+- etcd - replicated key/value store using the raft protocol.
+- fleetd - cluster manager
+- journald - aggregated logging
+- systemd - startup
+  - cron-like scheduling
+  - cloud-config
+- other logging
+- locksmith - upgrades
+- rudder - dynamic networks
 
 Deploy a 3 CoreOS cluster
 -------------------------
@@ -236,11 +250,33 @@ devbox
 
 rbucker/devbox - I have created a Dockerfile with a little more tooling and some documentation on bitbucket [here](https://bitbucket.org/rbucker/devbox). The different commands and dependencies are included.
 
+
+create a host user with the same uid and gid as the container
+
+boot2docker (broken because docker already uses the uid that I was intending to use in my devbox)
+```
+adduser 
+
+```
+
+CoreOS
+```
+sudo groupadd -g 1000 dev
+sudo useradd -d /home/dev -g 1000 -m -s /bin/bash -u 1000 dev
+sudo su - dev
+```
+
 create a storage volume
 
 ```
-mkdir -p /media/state/shared/
+sudo mkdir -p /media/state/shared/{bin,db,src,.ssh}
+sudo touch /media/state/shared/.bash_history
+sudo touch /media/state/shared/.maintainercfg
+sudo chown -R dev:dev /media/state/shared/.*
+sudo chown -R dev:dev /media/state/shared/
 ```
+
+The dev user on the host OS is not currently configured with the capability to do anything priviledged except maybe modify the files or folders assigned to is.
 
 ```
 mkdir -p ${HOME}/src/bitbucket.org/rbucker
