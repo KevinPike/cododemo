@@ -398,9 +398,32 @@ TASKS:
 Hello World webserver
 ---------------------
 
-tbd
+get the IP address
+```
+ifconfig
+```
 
-HA Hello World
+start the container up
+```
+docker run -it -v /media/state/shared/:/var/shared/ -p 8080:8080 rbucker/devbox /bin/bash
+cd ${HOME}/src/github.com/rbucker/cododemo
+go run web.go
+```
+
+Get the IP for the instance
+```
+grep COREOS_PUBLIC_IPV4 /etc/environment | awk 'BEGIN{FS = "="} {print $2}'
+```
+
+then in a browser
+```
+http://<ipaddr>:8080/bar
+```
+
+##### QUESTION
+What happened here?
+
+HA Hello World webserver
 --------------
 
 [docs](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/)
