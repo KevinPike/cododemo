@@ -24,6 +24,7 @@ When considering both CoreOS and Docker; they are viewed as codependent opiniona
 - Docker links have behaviors (see link ambassadors)
 - Docker wants you to build, test and deploy the same container instance
 - each Docker instance refers to itself as localhost and 127.0.0.1 (new)
+- Docker wants you to run your apps in the container foreground
 
 ** neither CoreOS nor Docker are going to create a transparent environment or experience. Getting to that level would potentially compromise security or create operational issues that the environments intend to prevent (FUD)
 
