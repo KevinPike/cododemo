@@ -75,6 +75,20 @@ Take the return string and paste it into the user-data file. Notice that the fil
 discovery: https://discovery.etcd.io/<replace this with the from the step above>
 ```
 
+Start the cluster. Notice that the first instance took a while to create. And the second two very quickly.
+
+```
+vagrant up
+vagrant status
+```
+
+ssh into an instance.
+
+```
+vagrant ssh core-01
+vagrant ssh core-02
+vagrant ssh core-03
+```
 
 
 
