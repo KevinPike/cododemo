@@ -1,3 +1,6 @@
+What is CoreOS?
+---------------
+
 CoreOS tools
 ------------
 
