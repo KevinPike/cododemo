@@ -8,6 +8,7 @@ exactly:
 - hand assembled
 - no package manager
 - A/B core
+- immutable
 - custom distro channels
 - auto update or controlled by enterprise tools
 
