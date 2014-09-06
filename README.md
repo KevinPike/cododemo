@@ -139,7 +139,6 @@ $expose_docker_tcp=2375
 $vb_gui = false
 $vb_memory = 1024
 $vb_cpus = 1
-
 ```
 
 The [user-data](https://github.com/coreos/coreos-vagrant/blob/master/user-data.sample) is a little tricky. The file is modelled a after the cloud-config file.
