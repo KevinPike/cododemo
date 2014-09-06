@@ -10,7 +10,12 @@ exactly:
 - A/B core
 - custom distro channels
 - auto update or controlled by enterprise tools
-- 
+
+NOTE
+----
+
+[Project Atomic](http://www.projectatomic.io/) is from Red Hat and is also awesome. It's based on Fedora with some SELinux sprinkled in. It also has some infrastructure dashboard type stuff and it also borrows from Docker and other projects.
+
 
 CoreOS tools
 ------------
