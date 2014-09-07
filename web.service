@@ -1,0 +1,11 @@
+[Unit]
+Description=simple web service
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill web-%i
+ExecStartPre=-/usr/bin/docker rm web-%i
+ExecStart=/usr/bin/docker run -rm -name web-%i -v /media/state/shared/:/var/shared/ -p 8080:8080 rbucker/devbox /bin/sh -c "cd ~/src/github.com/rbucker/cododemo && go run web.go"
+ExecStop=/usr/bin/docker kill web-%i
+
+[X-Fleet]
+X-ConditionMachineOf=web@%i.service
