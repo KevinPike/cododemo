@@ -76,6 +76,24 @@ http://<ipaddr>/bar
 
 [docs](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/)
 
+
+Logging
+-------
+
+It would be great to execut ALL of these commands from the same or any system. Try each one. What do you suppose is the issue?
+
+```
+fleetctl journal -f web@8081.service
+fleetctl journal -f web@8082.service
+fleetctl journal -f web@8083.service
+fleetctl journal -f nginx.service
+```
+
+How would you correct this problem?
+
+
+
+
 Hello World cloud-config
 ------------------------
 
