@@ -6,7 +6,7 @@ CoreOS is a new Linux distribution that has been rearchitected to provide featur
 exactly:
 - Linux distro
 - hand assembled
-- no package manager
+- no package manager, no perl, no python, no ruby
 - A/B core
 - immutable
 - custom distro channels
