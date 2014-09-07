@@ -115,7 +115,7 @@ create a host user with the same uid and gid as the container
 
 boot2docker (broken because docker already uses the uid that I was intending to use in my devbox)
 ```
-adduser 
+adduser .....
 
 ```
 
@@ -145,6 +145,8 @@ cd devbox
 docker build --rm -t=rbucker/devbox .
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 ```
+
+** fun fact: when the ```build``` is in progress the docker folks would prefer that you select a modern and active distro as the base and therefore you should not have to execute the ```apt-get update``` etc... this simply creates an unnecessary set of delta changes consuming disk and performance.
 
 ##### Play with etcd again
 ```
@@ -220,6 +222,15 @@ docker ps
 ```
 
 and you can stop the container if you want.
+
+Hello World webserver Cluster
+--------------
+
+Repeat the steps above on core-02 and core-03 and just for completeness run and verify the webserver from the previous step.
+
+** another fun fact. I'm writing this workshop on my home network which is experiencing stability problems. During the build on core-02 the network crashed and the build stopped. I simply restarted the build and it resumed from where it had left off. (a) no fuss or muss (b) no worries if it was complete or not.
+
+
 
 
 HA Hello World webserver
