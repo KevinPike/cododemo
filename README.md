@@ -69,6 +69,7 @@ Table of Contents
 - [CoreOS](https://github.com/rbucker/cododemo/blob/master/CoreOS.md)
 - [Docker](https://github.com/rbucker/cododemo/blob/master/Docker.md)
 - [Cluster](https://github.com/rbucker/cododemo/blob/master/Cluster.md)
+- [Ambassador](https://github.com/rbucker/cododemo/blob/master/Ambassador.md)
 
 
 
