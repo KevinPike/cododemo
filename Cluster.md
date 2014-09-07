@@ -42,16 +42,37 @@ fleetctl list-unit-files
 fleetctl list-units
 ```
 
+Get the port number
 ```
-fleetctl submit nginx.service
-fleetctl start nginx.service
+docker ps
 ```
+
+then in a browser
+```
+http://<ipaddr>/bar
+```
+
 
 
 HA Hello World webserver
 --------------
 
+```
+fleetctl submit nginx.service
+fleetctl start nginx.service
+```
 
+Get the IP for the instance
+```
+grep COREOS_PUBLIC_IPV4 /etc/environment | awk 'BEGIN{FS = "="} {print $2}'
+```
+
+then in a browser
+```
+http://<ipaddr>/bar
+```
+
+** reload a few times and watch the ID
 
 [docs](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/)
 
@@ -61,14 +82,5 @@ Hello World cloud-config
 tbd
 
 
-Get the IP for the instance
-```
-grep COREOS_PUBLIC_IPV4 /etc/environment | awk 'BEGIN{FS = "="} {print $2}'
-```
-
-then in a browser
-```
-http://<ipaddr>:8080/bar
-```
 
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
