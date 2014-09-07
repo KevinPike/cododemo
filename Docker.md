@@ -123,7 +123,6 @@ CoreOS
 ```
 sudo groupadd -g 1000 dev
 sudo useradd -d /home/dev -g 1000 -m -s /bin/bash -u 1000 dev
-sudo su - dev
 ```
 
 create a storage volume
