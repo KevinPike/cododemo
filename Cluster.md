@@ -81,6 +81,11 @@ Hello World cloud-config
 
 tbd
 
+What is a sidekick app?
+-----------------------
 
+In this example the nginx instance (1) watches etcd, (2) reconstructs the nginx config with the changes, (3) restarts nginx. Much of this is triggered by fleet and the nginx container. In the case of a sidekick, there would be a special container that is linked to the main app in separate fleet unit files. Then when the sidekick determined that an efent was occuring it would notify some other service (including etcd) that a change had ocurred; and thus the change would be reflected upstream.
+
+Just as in this example. "sidekick" is a different, yet idiomatic, way to perform the same function.
 
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
