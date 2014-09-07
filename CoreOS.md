@@ -130,4 +130,9 @@ vagrant ssh core-02
 curl -L http://127.0.0.1:4001/v2/keys/mykey
 ```
 
+release
+```
+cat /etc/*release
+```
+
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
