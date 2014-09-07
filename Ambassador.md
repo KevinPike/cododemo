@@ -1,3 +1,10 @@
+What is an Ambassador?
+----------------------
+
+tbd
+
+
+
 Redis Client and Server on the same instance
 --------------------------------------------
 
