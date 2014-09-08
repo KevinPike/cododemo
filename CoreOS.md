@@ -188,7 +188,7 @@ hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
 
 read-only
 ```
-core@core-01 ~ $ ls -l /
+core@core-01 ~ $ ls -l /etc
 . . .
 -rw-r--r-- 1 root root    63 Sep  5 03:30 group
 -rw------- 1 root root    51 Aug 28 07:55 group-
