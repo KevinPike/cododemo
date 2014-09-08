@@ -162,4 +162,17 @@ What changes are necessary to create:
 
 ![many-many](manymany.jpg "Optional title")
 
+Cluster Monitoring
+-----------------
+
+[Heapster](https://github.com/GoogleCloudPlatform/heapster)
+
+Cluster 
+-------
+
+We could have deployed a [kubernetes cluster](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/vagrant.md) same as we did CoreOS. It created 3 nodes ... my only concern is that this project uses fedora 20. While nice for the ecosystem I'd prefer to use vagrant+coreos+kubernetes and the example coreos docs want vmware.
+
+[kubernetes](https://github.com/GoogleCloudPlatform/kubernetes)
+
+
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
