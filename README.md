@@ -19,7 +19,7 @@ When considering both CoreOS and Docker; they are viewed as codependent opiniona
 - CoreOS does not ship with perl, python or ruby. THANK GOODNESS!
 - Docker containers are meant to look like a standalone machine but use the hosts OS kernel
 - Docker containers are immutable
-- Docker container persistance is accomplished by using volumes or data-links
+- Docker container [persistance](https://raw.githubusercontent.com/rbucker/cododemo/master/coreos%20docker%20volumes.jpg) is accomplished by using volumes or data-links
 - Docker wants one process per container
 - Docker containers require links in order to communicate between peers
 - Docker links have behaviors (see link ambassadors)
