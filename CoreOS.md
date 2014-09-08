@@ -156,6 +156,9 @@ tmpfs           500M  3.9M  496M   1% /media
 /dev/sda6       108M   88K   99M   1% /usr/share/oem
 ```
 
+
+[btrfs](https://btrfs.wiki.kernel.org/index.php/Main_Page) is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration.
+
 mounted partition
 ```
 core@core-01 ~ $ mount
