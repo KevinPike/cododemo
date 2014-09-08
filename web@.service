@@ -13,5 +13,5 @@ ExecStopPost=/usr/bin/etcdctl rm /app/server/%i
 
 
 [X-Fleet]
-X-Conflicts=web@%i.service
+X-Conflicts=web@*.service
 
