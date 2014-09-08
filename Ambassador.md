@@ -1,7 +1,11 @@
 What is an Ambassador?
 ----------------------
 
-tbd
+"The ambassador pattern is a novel way to deploy sets of containers that are configured at runtime via the Docker Links feature."  - [Full Article](https://coreos.com/blog/docker-dynamic-ambassador-powered-by-etcd/)
+
+Cross Linking via ambassador pattern [Link](https://docs.docker.com/articles/ambassador_pattern_linking/)
+
+What does the ambassador patter look like? [Here](https://coreos.com/assets/images/media/etcd-ambassador-flow.png) - 
 
 
 
