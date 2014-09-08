@@ -224,5 +224,20 @@ docker ps
 ```
 
 and you can stop the container if you want.
+
+cAdvisor Monitoring (single node)
+-------------------
+
+```
+sudo docker run \
+  --volume=/var/run:/var/run:rw \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  google/cadvisor:latest
+```
+
  
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
