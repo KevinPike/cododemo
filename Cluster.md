@@ -57,6 +57,8 @@ http://<ipaddr>/bar
 HA Hello World webserver
 --------------
 
+[Link](https://github.com/marceldegraaf/blog-coreos-1/tree/master/nginx) to nginx container project
+
 ```
 fleetctl submit nginx.service
 fleetctl start nginx.service
