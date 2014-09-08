@@ -87,6 +87,19 @@ So far everything I have written comes from one of the 4 sources I've already id
 
 [CoreOS](https://coreos.com/)
 
+Tools
+-----
+
+[Vessel](http://awvessel.github.io/)
+
+Kubernetes
+
+Panamax
+
+cAdvisor
+
+Shipyard + shipyard-agent
+
 
 Contributors
 ------------
