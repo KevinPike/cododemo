@@ -106,4 +106,23 @@ In this example the nginx instance (1) watches etcd, (2) reconstructs the nginx 
 
 Just as in this example. "sidekick" is a different, yet idiomatic, way to perform the same function.
 
+Ooops
+-----
+
+```
+fleetctl destroy web@{8081..8083}.service
+fleetctl start web@{8081..8083}.service
+fleetctl list-units
+```
+
+now reload the webpage. what happened?
+
+```
+fleetctl destroy nginx.service
+fleetctl start nginx.service
+fleetctl list-units
+```
+
+reload the browser. What happened?
+
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
