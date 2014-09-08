@@ -105,6 +105,11 @@ http://<ipaddr>/bar
 [docs](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/)
 
 
+
+One interesting side note... while this example has a confd implementation linked to the nginx container there is some overhead there. It would be interesting to check the size and resource consumption agains a small curl or url request code that [waits for a change](https://coreos.com/docs/distributed-configuration/etcd-api/#waiting-for-a-change) and then makes the necessary changes to the config etc.
+
+
+
 Logging
 -------
 
