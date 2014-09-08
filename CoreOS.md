@@ -193,6 +193,8 @@ hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
 /dev/sda9 on /var/lib/docker/btrfs type btrfs (rw,relatime,space_cache)
 ```
 
+Notice ```tmpfs on /media type tmpfs (rw,nosuid,nodev,noexec,relatime)``` is the root folder where the shared volume is stored and that it has the ```noexec``` flag set. This attribute extends into the symlink in the container so that you cannot execute binaries in the volumes. (overrides might be possible)
+
 read-only
 ```
 core@core-01 ~ $ ls -l /etc
