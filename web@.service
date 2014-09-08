@@ -3,6 +3,8 @@ Description=simple web service
 
 [Service]
 EnvironmentFile=/etc/environment
+Restart=always
+RestartSec=10s
 ExecStartPre=-/usr/bin/docker kill web-%i
 ExecStartPre=-/usr/bin/docker rm web-%i
 ExecStart=/usr/bin/docker run --rm --name web-%i -v /media/state/shared/:/var/shared/ -p %i:8080 rbucker/devbox /bin/sh -c "cd ~/src/github.com/rbucker/cododemo && go run web.go"
