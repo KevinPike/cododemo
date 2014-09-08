@@ -18,6 +18,30 @@ git clone https://github.com/rbucker/cododemo
 cd cododemo
 ```
 
+Fleet
+-----
+"CoreOS aggregates individual machines into a single pool of resources. Instead of running a service on a specific machine, services are submitted to the cluster and the cluster manager, fleet, decides where they should run. Fleet allows you to gracefully update CoreOS across your cluster, handles machine failures automatically and allows for efficient resource utilization." [link](https://coreos.com/docs/)
+
+** fleetctl is similar to systemctl (from systemd). systemd operates on a sindle node where fleet operates on cluster.
+
+Sample Unit Service files:
+--------------------------
+
+- [nginx.service](https://github.com/rbucker/cododemo/blob/master/nginx.service)
+- [Web@.service](https://github.com/rbucker/cododemo/blob/master/web%40.service)
+
+You can add additional criteria to the ```X-Fleet``` section ... "one fleet controls all clusters"
+```
+[X-Fleet]
+X-Conflicts=webapp*
+X-ConditionMachineMetadata=provider=rackspace
+X-ConditionMachineMetadata=platform=cloud
+X-ConditionMachineMetadata=region=east
+```
+
+
+
+
 
 Get a list of the machines in the cluster
 ```
