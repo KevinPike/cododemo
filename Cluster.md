@@ -114,6 +114,40 @@ service nginx start
 tail -f /var/log/nginx/*.log
 ```
 
+- [nginx.toml](https://github.com/marceldegraaf/blog-coreos-1/blob/master/nginx/nginx.toml)
+ 
+```
+[template]
+keys        = [ "app/server" ]
+owner       = "nginx"
+mode        = "0644"
+src         = "nginx.conf.tmpl"
+dest        = "/etc/nginx/sites-enabled/app.conf"
+check_cmd   = "/usr/sbin/nginx -t -c /etc/nginx/nginx.conf"
+reload_cmd  = "/usr/sbin/service nginx reload"
+```
+
+- [nginx.conf.tmpl](https://github.com/marceldegraaf/blog-coreos-1/blob/master/nginx/nginx.conf.tmpl)
+
+```
+upstream app {
+  {{ range $server := .app_server }}
+  server {{ $server.Value }};
+  {{ end }}
+}
+
+server {
+  server_name _;
+
+  location / {
+    proxy_pass http://app;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+}
+```
 
 
 - [Web@.service](https://github.com/rbucker/cododemo/blob/master/web%40.service)
