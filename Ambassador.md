@@ -2,11 +2,15 @@ Ooops
 -----
 
 ```
+fleetctl destroy web@{8081..8083}.service
+fleetctl start web@{8081..8083}.service
 ```
 
 now reload the webpage. what happened?
 
 ```
+fleetctl destroy nginx.service
+fleetctl start nginx.service
 ```
 
 reload the browser. What happened?
