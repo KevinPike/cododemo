@@ -170,7 +170,7 @@ Cluster Monitoring
 Cluster 
 -------
 
-We could have deployed a [kubernetes cluster](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/vagrant.md) same as we did CoreOS. It created 3 nodes ... my only concern is that this project uses fedora 20. While nice for the ecosystem I'd prefer to use vagrant+coreos+kubernetes and the example coreos docs want vmware.
+We could have deployed a [kubernetes cluster](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/vagrant.md) same as we did CoreOS. It created 3 nodes ... my only concern is that this project uses fedora 20. While nice for the ecosystem I'd prefer to use vagrant+coreos+kubernetes and the example coreos docs want vmware. 
 
 [kubernetes](https://github.com/GoogleCloudPlatform/kubernetes)
 
