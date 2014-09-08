@@ -3,10 +3,9 @@ What is an Ambassador?
 
 "The ambassador pattern is a novel way to deploy sets of containers that are configured at runtime via the Docker Links feature."  - [Full Article](https://coreos.com/blog/docker-dynamic-ambassador-powered-by-etcd/)
 
-Cross Linking via ambassador pattern [Link](https://docs.docker.com/articles/ambassador_pattern_linking/)
+![Ambassador](https://docs.docker.com/articles/ambassador_pattern_linking/)
 
-What does the ambassador patter look like? [Here](https://coreos.com/assets/images/media/etcd-ambassador-flow.png) - 
-
+The ambassador pattern is like the CoreOS-Sidekick-confd example except that the sidekick is implemented as a stub app and fleet dependencies. They both share etcd in order to replicate confiuration info.
 
 
 Redis Client and Server on the same instance
