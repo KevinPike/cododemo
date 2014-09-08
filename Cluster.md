@@ -165,7 +165,7 @@ What changes are necessary to create:
 Cluster Monitoring
 -----------------
 
-[Heapster](https://github.com/GoogleCloudPlatform/heapster)
+[Heapster](https://github.com/GoogleCloudPlatform/heapster) (the docs seem to favor kubernetes so I have not started looking into this one)
 
 Cluster 
 -------
