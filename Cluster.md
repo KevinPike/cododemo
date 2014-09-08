@@ -127,4 +127,15 @@ fleetctl list-units
 
 reload the browser. What happened?
 
+Finally
+-------
+
+This example looks like:
+![Fan out](fanout.jpg)
+
+
+What changes are necessary to create:
+
+![many-many](manymany.jpg "Optional title")
+
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
