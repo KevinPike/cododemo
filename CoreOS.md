@@ -227,6 +227,13 @@ drwxr-xr-x 1 root root    22 Aug 28 08:13 mtools
 
 ```
 
+##### Task
+
+- Add a 4th node to the local install
+- Deploy a new web server on the 4th node
+
+
+
 Enterprise tools
 
 - [scale](https://coreos.com/assets/images/media/Fleet-Scheduling.png)
