@@ -17,6 +17,8 @@ NOTE
 
 [Project Atomic](http://www.projectatomic.io/) is from Red Hat and is also awesome. It's based on Fedora with some SELinux sprinkled in. It also has some infrastructure dashboard type stuff and it also borrows from Docker and other projects. [CoreOS vs. Project Atomic: A Review](https://major.io/2014/05/13/coreos-vs-project-atomic-a-review/)
 
+My opinion is that CoreOS demonstrates strict release discipline.
+
 
 CoreOS tools
 ------------
@@ -217,5 +219,15 @@ lrwxrwxrwx 1 root root    19 Sep  4 21:02 mtab -> ../proc/self/mounts
 drwxr-xr-x 1 root root    22 Aug 28 08:13 mtools
 
 ```
+
+Enterprise tools
+
+- [scale](https://coreos.com/assets/images/media/Fleet-Scheduling.png)
+- [managed](https://coreos.com/products/managed-linux/)
+- [update](https://coreos.com/products/coreupdate/screenshots/)
+- [registry](https://coreos.com/products/enterprise-registry/)
+
+** cool feature ... suspend CoreOS updates while app is upgraded
+
 
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
