@@ -231,6 +231,7 @@ drwxr-xr-x 1 root root    22 Aug 28 08:13 mtools
 
 - Add a 4th node to the local install
 - Deploy a new web server on the 4th node
+- what heppens after a reboot of the node? (DO NOT TRY THIS NOW)
 
 
 
