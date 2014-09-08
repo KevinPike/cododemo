@@ -1,3 +1,5 @@
+![Docker](https://raw.githubusercontent.com/rbucker/cododemo/master/docker.png)
+
 What is Docker?
 --------------
 
