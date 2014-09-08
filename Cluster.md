@@ -20,9 +20,9 @@ cd cododemo
 
 Fleet
 -----
-"CoreOS aggregates individual machines into a single pool of resources. Instead of running a service on a specific machine, services are submitted to the cluster and the cluster manager, fleet, decides where they should run. Fleet allows you to gracefully update CoreOS across your cluster, handles machine failures automatically and allows for efficient resource utilization." [link](https://coreos.com/docs/)
+"CoreOS aggregates individual machines into a single pool of resources. Instead of running a service on a specific machine, services are submitted to the cluster and the cluster manager, fleet, decides where they should run. Fleet allows you to gracefully update CoreOS across your cluster, handles machine failures automatically and allows for efficient resource utilization." - [Full Article](https://coreos.com/docs/)
 
-With fleet, you can treat your CoreOS cluster as if it shared a single init system. It encourages users to write applications as small, ephemeral units that can easily migrate around a cluster of self-updating CoreOS machines. [Full Article](https://coreos.com/using-coreos/clustering/)
+With fleet, you can treat your CoreOS cluster as if it shared a single init system. It encourages users to write applications as small, ephemeral units that can easily migrate around a cluster of self-updating CoreOS machines. - [Full Article](https://coreos.com/using-coreos/clustering/)
 
 ** fleetctl is similar to systemctl (from systemd). systemd operates on a sindle node where fleet operates on cluster.
 
