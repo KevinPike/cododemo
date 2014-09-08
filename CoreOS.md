@@ -9,7 +9,7 @@ exactly:
 - no package manager, no perl, no python, no ruby
 - A/B core
 - immutable
-- custom distro channels
+- custom distro channels [releases](http://coreos.com/releases)
 - auto update or controlled by enterprise tools
 
 NOTE
