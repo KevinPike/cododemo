@@ -92,7 +92,7 @@ Tools
 
 [Vessel](http://awvessel.github.io/)
 
-Kubernetes
+Kubernetes - [CoreOS example](https://coreos.com/blog/running-kubernetes-example-on-CoreOS-part-2/)
 
 Panamax
 
