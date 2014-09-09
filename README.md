@@ -90,8 +90,21 @@ Table of Contents
   - Dockerfile
   - registry
   - Docker commands
-  - 
+  - run hello-world (compare to boot2docker)
+  - devbox
+  - hello-world part 2
+  - hello-world webserver
+  - IP address
+  - monitoring
+  - backup
 - [Cluster](https://github.com/rbucker/cododemo/blob/master/Cluster.md)
+  - hello-world cluster
+  - fleet
+  - service/unit files
+  - HA hello-world webserver
+  - logging
+  - sidekick
+  - clustering tools like kubernetes sometimes called scheduling, composition or orchestration
 - [Nats](https://github.com/rbucker/cododemo/blob/master/nats.md)
 - [Ambassador](https://github.com/rbucker/cododemo/blob/master/Ambassador.md)
  
