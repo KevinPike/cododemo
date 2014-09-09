@@ -7,6 +7,8 @@ NATS was created by Derek Collison, Founder/CEO of Apcera who has spent 20+ year
 
 NATS Client source is [here](https://github.com/apcera/nats)
 
+NATS [Community](http://nats.io/community/)
+
 #### Install and run gnatsd server on core-01
 
 ```
