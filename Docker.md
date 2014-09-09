@@ -65,13 +65,23 @@ The Dockerfile is held locally but can be stored in a public or private registry
 
 The registry.hub.docker.com is full of projects. There are many more community contributions than there are curated. ```Stackbrew``` is the username assigned to the docker team so their images can be trusted (don't take my word for it). There are some other users that are considered "trusted" but I'm not certain about the certification process. I prefer private repositories but that takes planning and storage.
 
+#### Docker commands
+
+```pull``` - pull an image from the repository. It will remain dormant until ```run``` or ```start```.
+
+```commit``` - push a local image to the remote registry. The <name> is critical and can effect where it is private or public.
+
+```rmi``` - remove an image
+
+```images``` - list all the local images
+
 
 Docker Commands
 ---------------
 
 ```build``` - Build a new image from the source code (Dockerfile). Each task in the Dockerfile creates a separate image file. Using the ```-rm``` flag deletes the intermediate images saving space but subsequent builds will take longer.
 
-```run``` - Run a command in a new container. If you want the command to run in the background then you need to set the interactive flag.
+```run``` - Run a command in a new container. If you want the command to run in the background then you need to set the interactive flag. There is a new (1.2.0) ```restart``` flag that tells docker to restart the environment. When deploying a cluster then use use with care.
 
 ```commit``` - Create a new image from a container's changes (save it in the repo)
 
@@ -165,6 +175,8 @@ cd devbox
 docker build --rm -t=rbucker/devbox .
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 ```
+
+** this last command can be considered an "interactive shell" (with the ```-it``` flags.
 
 ** fun fact: when the ```build``` is in progress the docker folks would prefer that you select a modern and active distro as the base and therefore you should not have to execute the ```apt-get update``` etc... this simply creates an unnecessary set of delta changes consuming disk and performance.
 
