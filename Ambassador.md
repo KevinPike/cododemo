@@ -42,10 +42,16 @@ Second Example
 ### Exercise
 
 #### on the server
+
+tbd
+
 #### on the client
 
+tbd
+
 #### Question
-are there any criticisms of this ambassador?
+- are there any criticisms of this ambassador?
+- why won't the example work as-is?
 
 ####Task:
 - How would you improve on this example?
