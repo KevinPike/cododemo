@@ -1,4 +1,4 @@
-![CoreOS](https://raw.githubusercontent.com/rbucker/cododemo/master/coreos-wordmark-vert-color.png =250x)
+![CoreOS](https://raw.githubusercontent.com/rbucker/cododemo/master/coreos-wordmark-vert-color.png)
 
 What is CoreOS?
 ---------------
