@@ -59,4 +59,6 @@ cp nats-pub ${HOME}/.
 ${HOME}/nats-pub -s nats://172.17.8.101:4222 "ntest" "test message"
 ```
 
+Now that you have created two subscribers and sent one message via the one publisher... review the other two consoles and notice that they received the incoming test message.
+
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
