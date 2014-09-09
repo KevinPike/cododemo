@@ -1,4 +1,4 @@
-![CoreOS](https://raw.githubusercontent.com/rbucker/cododemo/master/coreos-wordmark-vert-color.png)
+![CoreOS](https://raw.githubusercontent.com/rbucker/cododemo/master/coreos-wordmark-vert-color.png =250x)
 
 What is CoreOS?
 ---------------
@@ -18,6 +18,8 @@ NOTE
 ----
 
 [Project Atomic](http://www.projectatomic.io/) is from Red Hat and is also awesome. It's based on Fedora with some SELinux sprinkled in. It also has some infrastructure dashboard type stuff and it also borrows from Docker and other projects. [CoreOS vs. Project Atomic: A Review](https://major.io/2014/05/13/coreos-vs-project-atomic-a-review/)
+
+Since Project Atomic is sponsored by Red Hat there is plenty of attention to security. [This](http://sdtimes.com/red-hat-open-source-community-fortifying-docker/) article mentions some of the details.
 
 My opinion is that CoreOS demonstrates strict release discipline.
 
