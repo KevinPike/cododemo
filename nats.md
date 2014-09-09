@@ -64,6 +64,6 @@ Now that you have created two subscribers and sent one message via the one publi
 Task
 ----
 
-Implement the above as a fleet service.
+Implement the above as a fleet service with Dockerfile(s).
 
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
