@@ -218,6 +218,8 @@ cd ${HOME}/src/github.com/rbucker/cododemo
 go run web.go
 ```
 
+in the run command the ```-p 8080:8080``` param tells docker to redirect the public port 8080 to the private port 8080 of this container. If the application uses multiple ports then you can include multiple ```-p``` params.
+
 Get the IP for the instance
 ```
 grep COREOS_PUBLIC_IPV4 /etc/environment | awk 'BEGIN{FS = "="} {print $2}'
@@ -227,6 +229,14 @@ then in a browser
 ```
 http://<ipaddr>:8080/bar
 ```
+
+IP Addresses
+------------
+
+- the host has a public IP address (see /etc/environment)
+- the host has a localhost too
+- the container has an IP address (see /etc/environment, ifconfig)
+- the container has a localhost too
 
 ##### QUESTION
 What happened here?
