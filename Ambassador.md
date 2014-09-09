@@ -1,7 +1,9 @@
 What is an Ambassador?
 ----------------------
 
-The ambassador pattern is like the CoreOS-Sidekick-confd example except that the sidekick is implemented as a stub app and fleet dependencies. They both share etcd in order to replicate confiuration info.
+The ambassador pattern is like the CoreOS-Sidekick-confd example except that the sidekick is implemented as a stub app and fleet dependencies. They both share etcd in order to replicate confiuration info. 
+
+The mission for the ambassador pattern is to (a) support multiple network topologies (b) survive network partitioning (c) and some HA strategies.
 
 First Example
 -------------
