@@ -20,6 +20,8 @@ A [press release](http://cto.vmware.com/vmware-docker-better-together/) from VMw
 
 This [post](https://wiki.openstack.org/wiki/Docker) from OpenStack presents a similar and more complete understanding of their implementation. One of the advantages of a Docker container is that their is a density of containers in a single host. When combined with etcd, fleetd and other tools those containers can talk to local and remote containers as the infrastructure is located in the host. The post, linked here, suggests that their is a 1:1 between the hypervisor and the container. There are many missing elements as you have or will see in this example. The exact details of the Docker Virt Driver are TBD.
 
+The original Docker implementation depended on LXC containers and AUFS. Since then the Docker team has been developing their own container and has also experimenting with different filesystems.
+
 The Docker Stack
 ----------------
 
