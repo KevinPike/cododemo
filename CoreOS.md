@@ -26,7 +26,7 @@ CoreOS tools
 ------------
 
 - CoreOS Cluster is defined by 3 or more instances.
-- etcd - replicated key/value store using the raft protocol.
+- etcd - replicated key/value store using the [raft](http://thesecretlivesofdata.com/raft/) protocol.
 - fleetd - cluster manager
 - journald - aggregated logging
 - systemd - startup
