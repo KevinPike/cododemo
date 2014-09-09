@@ -3,6 +3,13 @@ CoreOS / Docker - demo (cododemo)
 
 This repo is meant for a small CoreOS + Docker workshop that I'm presenting by collecting bits from all over. I will provide references when possible. I appreciate those who came first.
 
+Preface
+-------
+
+[Link](http://www.ctlab.org/documents/How%20Complex%20Systems%20Fail.pdf) to an article from the University of Chicago entitled "How Complex Systems Fail (Being a Short Treatise on the Nature of Failure; How Failure is Evaluated; How Failure is Attributed to Proximate Cause; and the Resulting New Understanding of Patient Safety)". 
+
+The author does not say anything about monolithic applications vs microservices and so it's a topic for the reader as to which system is more complex.
+
 Warning
 -----------
 
