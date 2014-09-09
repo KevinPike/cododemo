@@ -5,7 +5,7 @@ What is CoreOS?
 
 CoreOS is a new Linux distribution that has been rearchitected to provide features needed to run modern infrastructure stacks. The strategies and architectures that influence CoreOS allow companies like Google, Facebook and Twitter to run their services at scale with high resilience. -- The CoreOS Site
 
-exactly:
+exactly:clouf
 - Linux distro
 - hand assembled
 - no package manager, no perl, no python, no ruby
@@ -72,6 +72,8 @@ $vb_cpus = 1
 ```
 
 The [user-data](https://github.com/coreos/coreos-vagrant/blob/master/user-data.sample) is a little tricky. The file is modelled a after the cloud-config file.
+
+"CoreOS allows you to declaratively customize various OS-level items, such as network configuration, user accounts, and systemd units."
 
 The first thing you need is key for ETCD so that the cluster can identify itself as part of the cluster. Each core instance of etcd uses this to identify the cluster. (if you ```vagrant destroy``` the cluster you need a ```new``` key)
 
@@ -254,6 +256,11 @@ docker ps
 ```
 
 ** it's a trick question
+
+### Cron
+
+Here is a [link](http://bl.ocks.org/adamalex/b5fb7f6b42caba4c3413) to some units that look like cron configs.
+
 
 Enterprise tools
 
