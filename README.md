@@ -15,6 +15,8 @@ Warning
 
 There is a lot of vaporware and junkware out there that is representing itself as orchestration or composition tools for CoreOS and/or Docker, however, while there is some effort involved in getting an environment into production it's almost better to execute and understand in the underlying scaffolding than to immediately defer to some opinionated framework.
 
+Additionally, event though Docker is 1.X it is still being developed. Plenty of new features are being added regularly.
+
 Opinionated Preface
 -------------------
 
@@ -51,6 +53,7 @@ Install
 -------
 
 [Boot2docker for OSX Installer Downloads](https://github.com/boot2docker/osx-installer/releases)
+   ** run the hello-world command
 
 [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads) **I'm not certain you need to install virtualbox. It might have been installed when boot2docker was installed.
 
@@ -72,28 +75,31 @@ Docker wants you to do the same thing.  Build the container, test the container,
 
 Table of Contents
 -----------------
-
+- preface (this document)
+  - warning
+  - opinionated
+  - install install install
+  - fun facts
 - [CoreOS](https://github.com/rbucker/cododemo/blob/master/CoreOS.md)
+  - major components discuss etcd(raft), fleetd, systemd
+  - vagrant start CoreOS
+  - play with etcd
+  - tasks (add 4th node, reboot)
 - [Docker](https://github.com/rbucker/cododemo/blob/master/Docker.md)
+  - compare vm to container; what is a container
+  - Dockerfile
+  - registry
+  - Docker commands
+  - 
 - [Cluster](https://github.com/rbucker/cododemo/blob/master/Cluster.md)
 - [Nats](https://github.com/rbucker/cododemo/blob/master/nats.md)
 - [Ambassador](https://github.com/rbucker/cododemo/blob/master/Ambassador.md)
-
-
-
+ 
 
 References
 ----------
 
-So far everything I have written comes from one of the 4 sources I've already identified as requirements.
-
-[Boot2docker](http://boot2docker.io/)
-
-[VirtualBox](https://www.virtualbox.org/)
-
-[Vagrant](https://www.vagrantup.com/)
-
-[CoreOS](https://coreos.com/)
+too many to summarize here... links are provided in the text.
 
 Tools
 -----
