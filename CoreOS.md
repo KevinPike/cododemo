@@ -244,6 +244,14 @@ How long does it take to boot CoreOS
 
 - Add a 4th node to the local install
 - what happens after a reboot of the node?
+```
+vagrant ssh core-02
+sudo reboot  
+vagrant ssh core-02
+dmesg
+fleetctl list-machines
+docker ps
+```
 
 Enterprise tools
 
