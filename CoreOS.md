@@ -253,6 +253,8 @@ fleetctl list-machines
 docker ps
 ```
 
+** it's a trick question
+
 Enterprise tools
 
 - [scale](https://coreos.com/assets/images/media/Fleet-Scheduling.png)
