@@ -106,6 +106,10 @@ Table of Contents
   - sidekick
   - clustering tools like kubernetes sometimes called scheduling, composition or orchestration
 - [Nats](https://github.com/rbucker/cododemo/blob/master/nats.md)
+  - deploy the server
+  - deploy 2 sub
+  - deploy 1 pub
+  - send a message
 - [Ambassador](https://github.com/rbucker/cododemo/blob/master/Ambassador.md)
  
 
