@@ -8,31 +8,29 @@ What is an Ambassador?
 The ambassador pattern is like the CoreOS-Sidekick-confd example except that the sidekick is implemented as a stub app and fleet dependencies. They both share etcd in order to replicate confiuration info.
 
 
-Redis Client and Server on the same instance
---------------------------------------------
+Cross-Host linking using Ambassador Containers - [Full Article](https://docs.docker.com/articles/ambassador_pattern_linking/)
 
-tbd
+on the server
+```
+docker run -d -name redis crosbymichael/redis
+docker run -t -i --link redis:redis --name redis_ambassador -p 6379:6379 svendowideit/ambassador
+```
 
-Redis Client and Server on different instances
-----------------------------------------------
+on the client
+```
+docker run -d --name redis_ambassador --expose 6379 -e REDIS_PORT_6379_TCP=tcp://172.17.8.104:6379 svendowideit/ambassador
+docker run -i -t --rm --link redis_ambassador:redis relateiq/redis-cli
+```
 
-tbd
+Question
+--------
 
-Redis Server Failure and restart
---------------------------------
+are there any criticisms of this ambassador?
 
-tbd
+Task:
+-----
+How would you improve on this example?
 
-** docker auto restart can be dangerous, especially when combined with CoreOS.
 
-Redis Server Failure and restart (ambassador)
----------------------------------------------
-
-tbd
-
-Redis Server Failure and fleet
-------------------------------
-
-tbd
 
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
