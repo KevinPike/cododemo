@@ -229,13 +229,21 @@ drwxr-xr-x 1 root root    22 Aug 28 08:13 mtools
 
 ```
 
+How long does it take to boot CoreOS
+```
+. . .
+[    3.438029] IPv6: ADDRCONF(NETDEV_UP): enp0s8: link is not ready
+[    3.440429] e1000: enp0s8 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    3.457107] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s8: link becomes ready
+[    3.477040] IPv6: ADDRCONF(NETDEV_UP): enp0s3: link is not ready
+[    3.479443] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    3.484650] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
+```
+
 ##### Task
 
 - Add a 4th node to the local install
-- Deploy a new web server on the 4th node
-- what heppens after a reboot of the node? (DO NOT TRY THIS NOW)
-
-
+- what happens after a reboot of the node?
 
 Enterprise tools
 
