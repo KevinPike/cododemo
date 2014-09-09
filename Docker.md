@@ -10,6 +10,15 @@ What is Docker?
 - since containers are immutable persistence is implemented through ```volumes``` or ```links``` to storage-containers
 - storage-containers that are not persisted via a ```volume``` will be lost when the reference count is zero
 - there are 3rd party tools for backing up containers and moving them around the cluster; and then there is the registry
+ 
+Preface
+-------
+
+[Link](http://blog.xen.org/index.php/2014/09/08/xen-docker-made-for-each-other/?utm_source=rss&utm_medium=rss&utm_campaign=xen-docker-made-for-each-other&utm_source=twitterfeed&utm_medium=twitter) to an article that compares VM (hypervisors) to containers.
+
+A [press release](http://cto.vmware.com/vmware-docker-better-together/) from VMware talks aboult how VMware is going to bolt Docker onto their ecosystem.
+
+This [post](https://wiki.openstack.org/wiki/Docker) from OpenStack presents a similar and more complete understanding of their implementation. One of the advantages of a Docker container is that their is a density of containers in a single host. When combined with etcd, fleetd and other tools those containers can talk to local and remote containers as the infrastructure is located in the host. The post, linked here, suggests that their is a 1:1 between the hypervisor and the container. There are many missing elements as you have or will see in this example. The exact details of the Docker Virt Driver are TBD.
 
 Docker tools
 ------------
