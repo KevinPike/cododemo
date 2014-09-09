@@ -25,6 +25,8 @@ The Docker Stack
 
 ![image stack](https://docs.docker.com/terms/images/docker-filesystems-multilayer.png)
 
+** Introduction to [layers](https://docs.docker.com/terms/layer/#ufs-def)
+
 Docker tools
 ------------
 
