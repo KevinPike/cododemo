@@ -135,7 +135,7 @@ Shipyard + shipyard-agent
 Contributors
 ------------
 
-TBD
+TBD (if you send me a pull request I will add you to the list)
 
 Thanks
 ------
