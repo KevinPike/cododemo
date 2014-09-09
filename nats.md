@@ -46,6 +46,10 @@ ${HOME}/nats-sub -s nats://172.17.8.101:4222 "ntest"
 #### create a subscriber example app on Core-03
 
 ```
+docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
+mkdir -p ${HOME}/src/github.com/apcera
+cd ${HOME}/src/github.com/apcera
+git clone https://github.com/apcera/nats.git
 export GOPATH=${HOME}
 cd nats/examples
 go build nats-pub.go
