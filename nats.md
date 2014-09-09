@@ -66,4 +66,9 @@ Task
 
 Implement the above as a fleet service with Dockerfile(s).
 
+Question
+--------
+
+Since the fleet config implements some sort of HA-ish ... how are you going to follow the gnatsd service as it might run on on any node?
+
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
