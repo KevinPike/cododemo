@@ -41,6 +41,8 @@ When considering both CoreOS and Docker; they are viewed as codependent opiniona
 Requirements
 ------------
 
+[github for mac](https://mac.github.com/)
+
 [Boot2docker](http://boot2docker.io/)
 
 [VirtualBox](https://www.virtualbox.org/)
