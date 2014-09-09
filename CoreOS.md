@@ -12,7 +12,7 @@ exactly:
 - A/B core
 - immutable
 - custom distro channels [releases](http://coreos.com/releases)
-- auto update or controlled by enterprise tools
+- auto update or controlled by enterprise tools (updates are different when installed on CoreOS proper and documented [here](https://github.com/coreos/coreos-vagrant#new-box-versions) on vagrant)
 
 NOTE
 ----
