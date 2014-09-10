@@ -310,6 +310,32 @@ What changes are necessary to create:
 
 ![many-many](manymany.jpg "Optional title")
 
+
+NOT CONFIRMED
+-------------
+
+```
+From your workstation/laptop/etc, do the following ....
+
+ssh-keygen -t rsa
+ - you may accept all default without passphrase
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub core@<ip>
+ - do this to all your coreos clusters
+
+eval `ssh-agent`
+
+ssh-add ~/.ssh/id_rsa
+ - add you ssh private key
+
+copy the ~/.ssh/know_hosts to ~/.fleetctl/
+ - you check about this things but basically these are the machines that you ssh-in
+
+fleetctl --tunnel=<one of your clusters> list-units -l
+ - you may use the env vars (FLEECTL_TUNNEL=<ip of one of your clusters>) of fleet for the tunnel and remove the --tunnel when executing fleetctl
+
+```
+
 Cluster Monitoring
 -----------------
 
