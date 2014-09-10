@@ -277,5 +277,10 @@ Enterprise tools
 
 ** cool feature ... suspend CoreOS updates while app is upgraded
 
+Interesting use case
+--------------------
+
+MemSQL: Running A 107 Node Cluster on CoreOS [Video](https://www.youtube.com/watch?v=uJirOCUg67o)
+
 
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
