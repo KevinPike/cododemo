@@ -259,7 +259,13 @@ docker ps
 
 ### Cron
 
-Here is a [link](http://bl.ocks.org/adamalex/b5fb7f6b42caba4c3413) to some units that look like cron configs.
+Fleet's service files are very much like the systemd service files. I have not found the decoder ring yet, however, this [Man Page](http://www.freedesktop.org/software/systemd/man/systemd.service.html) is useful. You'll have to stitch together the sections.
+
+The CoreOS team calls this "scheduling".
+
+[Link](http://bl.ocks.org/adamalex/b5fb7f6b42caba4c3413) to some units that look like cron configs.
+
+
 
 
 Enterprise tools
