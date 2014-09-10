@@ -97,6 +97,7 @@ Start the cluster. Notice that the first instance took a while to create. And th
 ```
 vagrant up
 vagrant status
+vagrant ssh-config
 ```
 
 ssh into an instance.
