@@ -9,7 +9,7 @@ CoreOS is a new Linux distribution that has been rearchitected to provide featur
 - Linux distro
 - hand assembled
 - no package manager, no perl, no python, no ruby
-- A/B core
+- A/B core borrows from ChromeOS
 - immutable
 - custom distro channels [releases](http://coreos.com/releases)
 - auto update or controlled by enterprise tools (updates are different when installed on CoreOS proper and documented [here](https://github.com/coreos/coreos-vagrant#new-box-versions) on vagrant)
