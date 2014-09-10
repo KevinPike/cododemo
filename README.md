@@ -10,13 +10,6 @@ Preface
 
 The author does not say anything about monolithic applications vs microservices and so it's a topic for the reader as to which system is more complex.
 
-Warning
------------
-
-There is a lot of vaporware and junkware out there that is representing itself as orchestration or composition tools for CoreOS and/or Docker, however, while there is some effort involved in getting an environment into production it's almost better to execute and understand in the underlying scaffolding than to immediately defer to some opinionated framework.
-
-Additionally, event though Docker is 1.X it is still being developed. Plenty of new features are being added regularly.
-
 Opinionated Preface
 -------------------
 
@@ -126,6 +119,10 @@ Tools
 -----
 
 ** research before adopting. Your implementation can be effected by their opinion on how you design your service.
+
+There is a lot of vaporware and junkware out there that is representing itself as orchestration or composition tools for CoreOS and/or Docker, however, while there is some effort involved in getting an environment into production it's almost better to execute and understand in the underlying scaffolding than to immediately defer to some opinionated framework.
+
+Additionally, event though Docker is 1.X it is still being developed. Plenty of new features are being added regularly.
 
 [Vessel](http://awvessel.github.io/)
 
