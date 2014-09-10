@@ -43,6 +43,7 @@ Deploy a 3 CoreOS cluster
 
 The CoreOS/Vagrant installer includes sample files that need to properly configures.
 
+##### TASK
 ```
 cd ${HOME}/src/github.com/coreos/coreos-vagrant
 cp config.rb.sample config.rb
@@ -51,6 +52,7 @@ cp user-data.sample user-data
 
 edit the [config.rb](https://github.com/coreos/coreos-vagrant/blob/master/config.rb.sample) file and make these changes. The lines might need to be uncommented:
 
+##### TASK
 ```
 # Size of the CoreOS cluster created by Vagrant
 $num_instances=3
@@ -77,12 +79,14 @@ The [user-data](https://github.com/coreos/coreos-vagrant/blob/master/user-data.s
 
 The first thing you need is key for ETCD so that the cluster can identify itself as part of the cluster. Each core instance of etcd uses this to identify the cluster. (if you ```vagrant destroy``` the cluster you need a ```new``` key)
 
+##### TASK
 ```
 curl https://discovery.etcd.io/new
 ```
 
 Take the return string and paste it into the user-data file. Notice that the file in the yml format.
 
+##### TASK
 ```
 discovery: https://discovery.etcd.io/<replace this with the from the step above>
 ```
