@@ -93,6 +93,7 @@ discovery: https://discovery.etcd.io/<replace this with the from the step above>
 
 Start the cluster. Notice that the first instance took a while to create. And the second two very quickly.
 
+##### TASK
 ```
 vagrant up
 vagrant status
@@ -100,6 +101,7 @@ vagrant status
 
 ssh into an instance.
 
+##### TASK
 ```
 vagrant ssh core-01
 vagrant ssh core-02
@@ -112,6 +114,8 @@ Play with etcd
 do this or pick your own combination of tasks
 
 Start here - clean my key, create a key, and verify on core-01
+
+##### TASK
 ```
 vagrant ssh core-01
 curl -L http://127.0.0.1:4001/version
@@ -123,6 +127,8 @@ curl -L http://127.0.0.1:4001/v2/keys/mykey
 ```
 
 Check that the key was replicated to core-02
+
+##### TASK
 ```
 vagrant ssh core-02
 curl -L http://127.0.0.1:4001/v2/machines
@@ -131,25 +137,35 @@ curl -L http://127.0.0.1:4001/v2/keys/mykey -XDELETE
 ```
 
 verify it's been deleted from core-01
+
+##### TASK
 ```
 vagrant ssh core-01
 curl -L http://127.0.0.1:4001/v2/keys/mykey
 ```
 
 verify it's still deleted from core-02
+
+##### TASK
 ```
 vagrant ssh core-02
 curl -L http://127.0.0.1:4001/v2/keys/mykey
 ```
 
 release
+
+##### TASK
 ```
 cat /etc/*release
+docker info
 ```
 
 
 
 free space
+
+##### TASK
+
 ```
 core@core-01 ~ $ df -h
 df: '/var/lib/docker/btrfs': Permission denied
@@ -170,6 +186,8 @@ tmpfs           500M  3.9M  496M   1% /media
 [btrfs](https://btrfs.wiki.kernel.org/index.php/Main_Page) is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration.
 
 mounted partition
+
+##### TASK
 ```
 core@core-01 ~ $ mount
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
@@ -204,6 +222,8 @@ hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
 Notice ```tmpfs on /media type tmpfs (rw,nosuid,nodev,noexec,relatime)``` is the root folder where the shared volume is stored and that it has the ```noexec``` flag set. This attribute extends into the symlink in the container so that you cannot execute binaries in the volumes. (overrides might be possible)
 
 read-only
+
+##### TASK
 ```
 core@core-01 ~ $ ls -l /etc
 . . .
@@ -236,7 +256,10 @@ drwxr-xr-x 1 root root    22 Aug 28 08:13 mtools
 ```
 
 How long does it take to boot CoreOS
+
+##### TASK
 ```
+$ dmesg
 . . .
 [    3.438029] IPv6: ADDRCONF(NETDEV_UP): enp0s8: link is not ready
 [    3.440429] e1000: enp0s8 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
@@ -246,10 +269,10 @@ How long does it take to boot CoreOS
 [    3.484650] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
 ```
 
-##### Task
-
 - Add a 4th node to the local install
 - what happens after a reboot of the node?
+
+##### TASK
 ```
 vagrant ssh core-02
 sudo reboot  
