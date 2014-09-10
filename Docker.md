@@ -283,6 +283,16 @@ sudo docker run \
 
 - https://github.com/discordianfish/docker-backup
 - https://docs.docker.com/userguide/dockervolumes/
+ 
+Tools
+-----
 
+##### Weave
+
+Project to implement a virtual network to across hosts.
+
+##### Rudder
+
+From the CoreOS project [this](https://github.com/coreos/rudder) "Rudder is an overlay network that gives a subnet to each machine for use with Kubernetes."
  
 [return](https://github.com/rbucker/cododemo/blob/master/README.md)
