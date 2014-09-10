@@ -265,7 +265,7 @@ The CoreOS team calls this "scheduling".
 
 [Link](http://bl.ocks.org/adamalex/b5fb7f6b42caba4c3413) to some units that look like cron configs.
 
-
+Some oneshot [examples](https://github.com/coreos/fleet/issues/562)
 
 
 Enterprise tools
