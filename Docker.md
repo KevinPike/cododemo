@@ -33,7 +33,7 @@ Docker tools
 ------------
 
 - registry, private registry (docker hub)
-- gitreceive
+- gitreceive - webhooks for CI build of containers
 - libcontainer - replacement for the lxc container
 - libswarm - orchestration APIs
 - libchan - golang RPC replacement for remote channel calls
@@ -94,6 +94,7 @@ Docker Cleanup
 
 I ran my hello world command multiple times. Something like. Since the command was just printing out hello and some other text before exiting; container is in a terminal state. Not running. Running the ```docker ps``` command will return an empty list. However, after running the command ```docker run hello-world``` multiple times the docker container did leave some breadcrumbs.
 
+##### TASK
 ```
 $ docker ps -a
 CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS                         PORTS               NAMES
@@ -126,6 +127,7 @@ there was once a 42 image limit for a container. At some point you have to flatt
 Hello World
 -----------
 
+##### TASK
 ```
 vagrant ssh core-01
 docker run hello-world
@@ -135,6 +137,8 @@ notice that the output from this hello-world is the exact same as the boot2docke
 
 devbox
 ------
+
+This dockerfile is a "standardized" way to deploy a dev environment. The team should decide on what tools everyone needs so that they are constructing from the same toolchain.
 
 [shykes/devbox](https://registry.hub.docker.com/u/shykes/devbox/) - is a container the allows the user to create a proper development environment. (build the container, run the container with a command, execute your shell commands etc...) He has a [link](https://github.com/shykes/devbox) to the github source.
 
@@ -149,7 +153,16 @@ adduser .....
 
 ```
 
+Setup Our CoreOS devbox
+----------------------------
+
+The original container had some dependencies that I decided to work with instead of against. For example the default user is "dev"... in order to share persistence between the container and the host they need the same uid/gid.
+
+##### perform the following tasks on each node
+
 CoreOS
+
+##### TASK
 ```
 sudo groupadd -g 1000 dev
 sudo useradd -d /home/dev -g 1000 -m -s /bin/bash -u 1000 dev
@@ -157,6 +170,7 @@ sudo useradd -d /home/dev -g 1000 -m -s /bin/bash -u 1000 dev
 
 create a storage volume
 
+##### TASK
 ```
 sudo mkdir -p /media/state/shared/{bin,db,src,.ssh}
 sudo touch /media/state/shared/.bash_history
@@ -167,6 +181,7 @@ sudo chown -R dev:dev /media/state/shared/
 
 The dev user on the host OS is not currently configured with the capability to do anything priviledged except maybe modify the files or folders assigned to is.
 
+##### TASK
 ```
 mkdir -p ${HOME}/src/bitbucket.org/rbucker
 cd ${HOME}/src/bitbucket.org/rbucker
@@ -180,7 +195,9 @@ docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 
 ** fun fact: when the ```build``` is in progress the docker folks would prefer that you select a modern and active distro as the base and therefore you should not have to execute the ```apt-get update``` etc... this simply creates an unnecessary set of delta changes consuming disk and performance.
 
-##### Play with etcd again
+#### Play with etcd again
+
+##### TASK
 ```
 # advanced - connecting to the host from inside the container (somewhat unreliable)
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
@@ -193,6 +210,14 @@ curl -L http://${DOCKERHOST}:4001/v2/keys/mykey
 Hello World Part 2
 ------------------
 
+If you are not already running in a container then launch a container
+
+##### TASK
+```
+docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
+```
+
+##### TASK
 ```
 mkdir -p ${HOME}/src/github.com/rbucker
 cd ${HOME}/src/github.com/rbucker
@@ -202,11 +227,12 @@ cd cododemo
 
 run the hello.go program through the go compiler/runner
 
+##### TASK
 ```
 go run hello.go 
 ```
 
-TASKS:
+##### TASK
 - exit the container
 - run the container
 - go back to the hello source ```cd ${HOME}/src/github.com/rbucker/cododemo```
