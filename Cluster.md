@@ -5,15 +5,17 @@
 Hello World webserver Cluster
 --------------
 
-Repeat the steps above on core-02 and core-03 and just for completeness run and verify the webserver from the previous step.
+##### TASK
+Repeat the setup steps from core-01 on core-02 and core-03 and just for completeness run and verify the webserver from the previous step.
 
 ** another fun fact. I'm writing this workshop on my home network which is experiencing stability problems. During the build on core-02 the network crashed and the build stopped. I simply restarted the build and it resumed from where it had left off. (a) no fuss or muss (b) no worries if it was complete or not.
 
 ```kill``` the container currently running on core-01.
 
+##### TASK
 ```
-mkdir -p ~/src/github.com/rbucker
-cd ~/src/github.com/rbucker
+mkdir -p ${HOME}/src/github.com/rbucker
+cd ${HOME}/src/github.com/rbucker
 git clone https://github.com/rbucker/cododemo
 cd cododemo
 ```
@@ -166,11 +168,15 @@ X-ConditionMachineMetadata=region=east
 
 
 Get a list of the machines in the cluster
+
+##### TASK
 ```
 fleetctl list-machines
 ```
 
 Load the service file into fleet
+
+##### TASK
 ```
 fleetctl list-unit-files
 fleetctl submit web@.service
@@ -179,21 +185,30 @@ fleetctl list-units
 ```
 
 Start the units (it's going to take a while)
+
+##### TASK
 ```
 fleetctl start web@{8081..8083}.service
 ```
+
 And then you can test the status
+
+##### TASK
 ```
 fleetctl list-unit-files
 fleetctl list-units
 ```
 
-Get the port number
+Get the port number (the ip address and the port number may not match)
+
+##### TASK
 ```
 docker ps
 ```
 
 then in a browser
+
+##### TASK
 ```
 http://<ipaddr>/bar
 ```
@@ -205,17 +220,22 @@ HA Hello World webserver
 
 [Link](https://github.com/marceldegraaf/blog-coreos-1/tree/master/nginx) to nginx container project
 
+##### TASK
 ```
 fleetctl submit nginx.service
 fleetctl start nginx.service
 ```
 
 Get the IP for the instance
+
+##### TASK
 ```
 grep COREOS_PUBLIC_IPV4 /etc/environment | awk 'BEGIN{FS = "="} {print $2}'
 ```
 
-then in a browser
+then in a browser (notice port 80 by default)
+
+##### TASK
 ```
 http://<ipaddr>/bar
 ```
@@ -235,6 +255,7 @@ Logging
 
 It would be great to execut ALL of these commands from the same or any system. Try each one. What do you suppose is the issue?
 
+##### TASK
 ```
 fleetctl journal -f web@8081.service
 fleetctl journal -f web@8082.service
