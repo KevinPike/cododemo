@@ -289,7 +289,7 @@ Tools
 
 ##### Weave
 
-Project to implement a virtual network to across hosts.
+[Project](https://github.com/zettio/weave/) to implement a virtual network to across hosts.
 
 ##### Rudder
 
