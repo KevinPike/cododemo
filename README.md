@@ -48,9 +48,8 @@ Install
 -------
 
 [Boot2docker for OSX Installer Downloads](https://github.com/boot2docker/osx-installer/releases)
-   ** run the hello-world command
 
-[VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads) **I'm not certain you need to install virtualbox. It might have been installed when boot2docker was installed.
+Virtualbox is installed with boot2docker
 
 [Vagrant](https://www.vagrantup.com/downloads)
 
