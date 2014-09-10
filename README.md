@@ -125,6 +125,8 @@ too many to summarize here... links are provided in the text.
 Tools
 -----
 
+** research before adopting. Your implementation can be effected by their opinion on how you design your service.
+
 [Vessel](http://awvessel.github.io/)
 
 Kubernetes - [CoreOS example](https://coreos.com/blog/running-kubernetes-example-on-CoreOS-part-2/)
@@ -135,6 +137,15 @@ cAdvisor
 
 Shipyard + shipyard-agent
 
+Apache mesosphere, marathon
+
+deis
+
+heapster
+
+datadog
+
+CoreOS Enterprise
 
 Contributors
 ------------
