@@ -5,7 +5,7 @@ What is CoreOS?
 
 CoreOS is a new Linux distribution that has been rearchitected to provide features needed to run modern infrastructure stacks. The strategies and architectures that influence CoreOS allow companies like Google, Facebook and Twitter to run their services at scale with high resilience. -- The CoreOS Site
 
-exactly:clouf
+
 - Linux distro
 - hand assembled
 - no package manager, no perl, no python, no ruby
