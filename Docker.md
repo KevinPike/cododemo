@@ -236,13 +236,14 @@ go run hello.go
 - exit the container
 - run the container
 - go back to the hello source ```cd ${HOME}/src/github.com/rbucker/cododemo```
-- run hello again
+- run hello again ```go run hello.go```
 - build hello instead of run ```go build hello.go```
-- get a long list from this folder and notice the flags on the executable ```hello```
+- get a long list from this folder and notice the flags on the executable ```ls -l hello```
 - run hello from the executable ```./hello```
 - what did you get?
 - why?
-- copy the executable to your home and execute ```cp ./hello ~/. && ~/hello```
+- copy the executable to your home ```cp ./hello ~/. && ${HOME}/hello```
+- execute ```${HOME}/hello```
 - what did you get?
 - why?
 
@@ -250,6 +251,8 @@ Hello World webserver
 ---------------------
 
 start the container up
+
+##### TASK
 ```
 docker run -it -v /media/state/shared/:/var/shared/ -p 8080:8080 rbucker/devbox /bin/bash
 cd ${HOME}/src/github.com/rbucker/cododemo
@@ -258,12 +261,16 @@ go run web.go
 
 in the run command the ```-p 8080:8080``` param tells docker to redirect the public port 8080 to the private port 8080 of this container. If the application uses multiple ports then you can include multiple ```-p``` params.
 
-Get the IP for the instance
+Get the IP for the CoreOS instance (there is an /etc/environment file in both the docker container and the CoreOS instances)
+
+##### TASK
 ```
 grep COREOS_PUBLIC_IPV4 /etc/environment | awk 'BEGIN{FS = "="} {print $2}'
 ```
 
 then in a browser
+
+##### TASK
 ```
 http://<ipaddr>:8080/bar
 ```
@@ -280,11 +287,15 @@ IP Addresses
 What happened here?
 
 Alternately (the ```-d``` flag indicates that this is detached)
+
+##### TASK
 ```
 docker run -d -v /media/state/shared/:/var/shared/ -p 8080:8080 rbucker/devbox /bin/sh -c "cd ~/src/github.com/rbucker/cododemo && go run web.go"
 ```
 
 Now you can get the docker process stack
+
+##### TASK
 ```
 docker ps
 ```
@@ -294,6 +305,7 @@ and you can stop the container if you want.
 cAdvisor Monitoring (single node)
 -------------------
 
+##### TASK
 ```
 sudo docker run \
   --volume=/var/run:/var/run:rw \
