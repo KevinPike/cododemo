@@ -45,7 +45,10 @@ The CoreOS/Vagrant installer includes sample files that need to properly configu
 
 ##### TASK
 ```
-cd ${HOME}/src/github.com/coreos/coreos-vagrant
+mkdir -p {$HOME}/src/github.com/coreos
+cd {$HOME}/src/github.com/coreos
+git clone https://github.com/coreos/coreos-vagrant
+cd coreos-vagrant
 cp config.rb.sample config.rb
 cp user-data.sample user-data
 ```
