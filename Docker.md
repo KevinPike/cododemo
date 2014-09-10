@@ -158,7 +158,7 @@ Setup Our CoreOS devbox
 
 The original container had some dependencies that I decided to work with instead of against. For example the default user is "dev"... in order to share persistence between the container and the host they need the same uid/gid.
 
-##### perform the following tasks on each node
+##### perform the following tasks on core-01
 
 CoreOS
 
