@@ -11,6 +11,7 @@ NATS [Community](http://nats.io/community/)
 
 #### Install and run gnatsd server on core-01
 
+##### TASK
 ```
 docker run --name my_gnatsd -p 4222:4222 -p 8333:8333 -d apcera/gnatsd
 ```
@@ -18,6 +19,7 @@ docker run --name my_gnatsd -p 4222:4222 -p 8333:8333 -d apcera/gnatsd
 #### create a publisher example app on Core-01
 
 
+##### TASK
 ```
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 mkdir -p ${HOME}/src/github.com/apcera
@@ -33,6 +35,7 @@ ${HOME}/nats-sub -s nats://172.17.8.101:4222 "ntest"
 
 #### create a publisher example app on Core-02
 
+##### TASK
 ```
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 mkdir -p ${HOME}/src/github.com/apcera
@@ -47,6 +50,7 @@ ${HOME}/nats-sub -s nats://172.17.8.101:4222 "ntest"
 
 #### create a subscriber example app on Core-03
 
+##### TASK
 ```
 docker run -it -v /media/state/shared/:/var/shared/ rbucker/devbox /bin/bash
 mkdir -p ${HOME}/src/github.com/apcera
